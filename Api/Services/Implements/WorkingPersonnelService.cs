@@ -62,6 +62,7 @@ namespace Api.Services.Implements
                         .Where((t1, t2) => t1.UserId == user.UserId)
                         .Select((t1, t2) => new WorkingPersonnelRoleViewModel
                         {
+                            UserId = t1.UserId,
                             Name = t1.Name,
                             RoleId = t1.RoleId,
                             RoleName = t2.RoleName
