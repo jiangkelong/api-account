@@ -34,11 +34,11 @@ namespace Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IHttpContextAccessor svp, IHostingEnvironment _hostingEnvironment)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IHttpContextAccessor svp)
         {
             Config.ConnectionString = Configuration.GetConnectionString("DefaultConnection");
             Config._httpContextAccessor = svp;
-            Config._hostingEnvironment = _hostingEnvironment;
+            Config._hostingEnvironment = env;
             app.UseCors(builder => builder
                         .AllowAnyOrigin()
                         .AllowAnyMethod()
